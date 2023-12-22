@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1 style="text-align: center; padding-top: 1em; padding-bottom: 1em;">Edit Employee Information</h1>
+    <form action="/update/{{emp.emp_id}}/" method="post">
+        {% csrf_token %}
+        <label for="text">Emp-Name</label>
+        <input type="text" name="emp_name" id="1" value="{{emp.emp_name}}"><br>
+        {% comment %} <input type="submit" value="Submit"> {% endcomment %}
+        <label for="text">Emp email</label>
+        <input type="email" name="emp_email" id="3" value="{{emp.emp_email}}"><br>
+        <label for="text">Emp-Contact</label>
+        <input type="text" name="emp_contact" id="17" value="{{emp.emp_contact}}"><br>
+        <label for="text">Emp-role</label>
+        <input type="text" name="emp_role" id="177" value="{{emp.emp_role}}"><br
+        <label for="text">Emp-Salary</label>
+        <input type="text" name="emp_salary" id="817" value="{{emp.emp_salary}}"><br>
+         {% comment %} <label for="text">Emp-Id</label>
+        <input type="text" name="emp_id" id="8817" value="{{emp.emp_id}}"><br> {% endcomment %}
+        {% comment %} <input type="submit" value="Submit"> {% endcomment %}
+        <td><button class='btn btn-primary' type="submit">Submit</button></td>
+    </form>
+{% endblock content %}
+</body>
+</html>
